@@ -15,9 +15,6 @@ const Home = () => {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <div className="hero-badge">
-                ✨ Premium Quality Appliances
-              </div>
               <h1 className="hero-title">
                 <span className="hero-highlight">Wide Range of</span><br />
                 <span className="hero-gradient-text">Large Appliances</span> to<br />
@@ -82,9 +79,6 @@ const Home = () => {
                   </div>
                   <div className="appliance-item">
                     <img src="/Air/Honeywall air.jpg" alt="Air Purifier" />
-                  </div>
-                  <div className="appliance-item">
-                    <img src="/Refrig/godrej ref.jpg" alt="Godrej Refrigerator" />
                   </div>
                 </div>
               </div>

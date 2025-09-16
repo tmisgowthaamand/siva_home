@@ -11,7 +11,6 @@ const Footer = () => {
           {/* Company Info */}
           <div className="footer-section">
             <div className="footer-logo">
-              <div className="logo-icon">⚡</div>
               <div className="logo-text">
                 <span className="logo-main">Siva Electronics</span>
                 <span className="logo-sub">& Home Appliances</span>

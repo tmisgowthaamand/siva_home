@@ -39,7 +39,6 @@ const Header = () => {
         <div className="header-content">
           {/* Logo */}
           <Link to="/" className="logo" onClick={handleNavClick}>
-            <div className="logo-icon">⚡</div>
             <div className="logo-text">
               <span className="logo-main">Siva Electronics</span>
               <span className="logo-sub">& Home Appliances</span>

@@ -12,8 +12,8 @@ const ShippingPolicy = () => {
         <BackButton />
         <div className="policy-header">
           <h1>Shipping Policy</h1>
-          <h2 className="policy-subtitle">Safe, Reliable, and On-Time Delivery of Your Appliances</h2>
-          <p className="last-updated">Last Updated: August 2025</p>
+          <p className="policy-subtitle">Fast and reliable delivery services</p>
+          <p className="website-info">Visit us at <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer" className="website-link">sivaappliances.shop</a></p>
         </div>
 
         <div className="policy-content">
@@ -107,7 +107,8 @@ const ShippingPolicy = () => {
               <p>📍 OPP. TO 21, J.K.PLAZA, PALLIPAT MAIN ROAD, PODHATUR PETTAI, Tiruvallur, Tamil Nadu, 631208</p>
               <p>📞 +91 99436 91712 / +91 63837 91917</p>
               <p>📧 Email: sivahomeappliances033@gmail.com</p>
-              <p>🌐 Website: www.sivaelectronics.com</p>
+              <p>📧 Customer Support: contact@sivaappliances.shop</p>
+              <p>🌐 Website: <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer">http://sivaappliances.shop/</a></p>
             </div>
           </section>
         </div>

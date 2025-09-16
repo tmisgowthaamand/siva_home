@@ -12,9 +12,10 @@ const CancellationRefund = () => {
         <BackButton />
         <div className="policy-header">
           <h1>Cancellation & Refund Policy</h1>
-          <h2 className="policy-subtitle">Fair, Transparent, and Customer-Friendly</h2>
-          <p className="last-updated">Last Updated: August 2025</p>
+          <p className="policy-subtitle">Flexible cancellation and hassle-free refunds</p>
+          <p className="website-info">Visit us at <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer" className="website-link">sivaappliances.shop</a></p>
         </div>
+        <p className="last-updated">Last Updated: August 2025</p>
 
         <div className="policy-content">
           <section className="policy-section">
@@ -101,7 +102,8 @@ const CancellationRefund = () => {
               <p>📍 OPP. TO 21, J.K.PLAZA, PALLIPAT MAIN ROAD, PODHATUR PETTAI, Tiruvallur, Tamil Nadu, 631208</p>
               <p>📞 +91 99436 91712 / +91 63837 91917</p>
               <p>📧 Email: sivahomeappliances033@gmail.com</p>
-              <p>🌐 Website: www.sivaelectronics.com</p>
+              <p>📧 Customer Support: contact@sivaappliances.shop</p>
+              <p>🌐 Website: <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer">http://sivaappliances.shop/</a></p>
               <p><strong>Our team is available Mon–Sat, 10 AM – 7 PM IST.</strong></p>
             </div>
           </section>

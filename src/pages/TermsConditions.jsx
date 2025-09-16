@@ -12,6 +12,8 @@ const TermsConditions = () => {
         <BackButton />
         <div className="policy-header">
           <h1>Terms & Conditions</h1>
+          <p className="policy-subtitle">Please read these terms carefully</p>
+          <p className="website-info">Visit us at <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer" className="website-link">sivaappliances.shop</a></p>
           <p className="last-updated">Last Updated: August 2025</p>
         </div>
 
@@ -133,7 +135,8 @@ const TermsConditions = () => {
               <p>📍 OPP. TO 21, J.K.PLAZA, PALLIPAT MAIN ROAD, PODHATUR PETTAI, Tiruvallur, Tamil Nadu, 631208</p>
               <p>📞 +91 99436 91712 / +91 63837 91917</p>
               <p>📧 Email: sivahomeappliances033@gmail.com</p>
-              <p>🌐 Website: www.sivaelectronics.com</p>
+              <p>📧 Customer Support: contact@sivaappliances.shop</p>
+              <p>🌐 Website: <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer">http://sivaappliances.shop/</a></p>
             </div>
           </section>
         </div>

@@ -15,6 +15,10 @@ import Contact from './pages/Contact';
 import Support from './pages/Support';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import ShippingPolicy from './pages/ShippingPolicy';
+import CancellationRefund from './pages/CancellationRefund';
 import Category from './pages/Category';
 import Favorites from './pages/Favorites';
 
@@ -40,6 +44,10 @@ function App() {
                 <Route path="/support" element={<Support />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-conditions" element={<TermsConditions />} />
+                <Route path="/shipping" element={<ShippingPolicy />} />
+                <Route path="/cancellation" element={<CancellationRefund />} />
               </Routes>
             </main>
             <Footer />

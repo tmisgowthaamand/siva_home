@@ -221,6 +221,7 @@
   background: var(--border);
   outline: none;
   -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
 }
 

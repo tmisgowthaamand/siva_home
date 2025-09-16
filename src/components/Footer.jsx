@@ -107,11 +107,11 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © 2024 Siva Electronics & Home Appliances. All rights reserved.
+              © 2025 Siva Electronics & Home Appliances. All rights reserved.
             </p>
             <div className="footer-bottom-links">
-              <Link to="/privacy">Privacy Policy</Link>
-              <Link to="/terms">Terms & Conditions</Link>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/terms-conditions">Terms & Conditions</Link>
               <Link to="/shipping">Shipping Policy</Link>
               <Link to="/cancellation">Cancellation & Refund</Link>
             </div>

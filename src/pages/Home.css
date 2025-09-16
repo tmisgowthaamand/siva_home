@@ -413,8 +413,7 @@
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
   max-width: 1000px;
   margin: 0 auto;
@@ -616,21 +615,11 @@
 /* Device-Specific Responsive Design */
 
 /* Large Desktop (1440px+) */
-@media (min-width: 1440px) {
-  .hero-content {
-    gap: var(--spacing-3xl);
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 2rem;
   }
-  
-  .appliances-showcase {
-    max-width: 700px;
-  }
-  
-  .categories-grid {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: var(--spacing-xl);
-  }
-  
   .products-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--spacing-2xl);
@@ -668,8 +657,7 @@
   }
   
   .categories-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .products-grid {
@@ -712,7 +700,6 @@
   
   .categories-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     gap: var(--spacing-md);
   }
   

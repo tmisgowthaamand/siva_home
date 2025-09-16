@@ -123,30 +123,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="categories-section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Shop by Category</h2>
-            <p>Explore our wide range of electronics and home appliances</p>
-          </div>
-          <div className="categories-grid">
-            {categories.map((category) => (
-              <Link 
-                key={category.id} 
-                to={`/category/${category.id}`} 
-                className="category-card"
-              >
-                <div className="category-icon">{category.icon}</div>
-                <h3 className="category-name">{category.name}</h3>
-                <span className="category-arrow">
-                  <ArrowRight size={16} />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Featured Products Section */}
       <section className="featured-products">

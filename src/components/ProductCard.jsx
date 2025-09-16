@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Star, ShoppingCart, Eye } from 'lucide-react';
+import { ShoppingCart, Star, Heart, Eye } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useFavorites } from '../context/FavoritesContext';
+import { highlightText } from '../utils/highlightText';
 import QuickViewModal from './QuickViewModal';
-import { highlightText } from '../utils/highlightText.jsx';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart, isInCart } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   const [searchParams] = useSearchParams();
   const searchQuery = searchParams.get('search') || '';
@@ -16,6 +18,12 @@ const ProductCard = ({ product }) => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product);
+  };
+
+  const handleToggleFavorite = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleFavorite(product);
   };
 
   const handleQuickView = (e) => {
@@ -120,6 +128,14 @@ const ProductCard = ({ product }) => {
       </Link>
       
       <div className="product-actions">
+        <button 
+          className={`favorite-btn ${isFavorite(product.id) ? 'favorited' : ''}`}
+          onClick={handleToggleFavorite}
+          title={isFavorite(product.id) ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          <Heart size={16} fill={isFavorite(product.id) ? 'currentColor' : 'none'} />
+        </button>
+        
         <button 
           className={`add-to-cart-btn ${isInCart(product.id) ? 'in-cart' : ''}`}
           onClick={handleAddToCart}

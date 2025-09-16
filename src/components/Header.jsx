@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X, User } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, User, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { scrollToTop } from '../utils/scrollToTop';
 import './Header.css';
@@ -86,6 +86,12 @@ const Header = () => {
 
           {/* Header Actions */}
           <div className="header-actions">
+            <Link to="/favorites" className="favorites-link" onClick={scrollToTop}>
+              <div className="favorites-icon-wrapper">
+                <Heart size={24} />
+              </div>
+            </Link>
+
             <Link to="/cart" className="cart-link" onClick={scrollToTop}>
               <div className="cart-icon-wrapper">
                 <ShoppingCart size={24} />
@@ -121,6 +127,7 @@ const Header = () => {
               <Link to="/category/blender" className="mobile-nav-link" onClick={handleNavClick}>Blenders</Link>
             </div>
 
+            <Link to="/favorites" className="mobile-nav-link" onClick={handleNavClick}>Favorites</Link>
             <Link to="/about" className="mobile-nav-link" onClick={handleNavClick}>About</Link>
             <Link to="/contact" className="mobile-nav-link" onClick={handleNavClick}>Contact</Link>
             <Link to="/support" className="mobile-nav-link" onClick={handleNavClick}>Support</Link>

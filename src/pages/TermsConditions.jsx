@@ -1,6 +1,6 @@
 import React from 'react';
 import useScrollToTop from '../hooks/useScrollToTop';
-import BackButton from '../components/BackButton';
+import BackButton from '../components/ui/BackButton';
 import './PrivacyPolicy.css';
 
 const TermsConditions = () => {

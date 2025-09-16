@@ -4,7 +4,7 @@ import { ArrowLeft, Heart, ShoppingCart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
 import { useCart } from '../context/CartContext';
-import { scrollToTop } from '../utils/scrollToTop';
+import { scrollToTop } from "../lib/scrollToTop";
 import './Favorites.css';
 
 const Favorites = () => {

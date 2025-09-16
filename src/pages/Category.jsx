@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { getProductsByCategory, categories } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import { getProductsByCategory, categories } from "../constants/products";
+import ProductCard from "../components/ui/ProductCard";
 import './Category.css';
 
 const Category = () => {

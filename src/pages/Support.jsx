@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HelpCircle, MessageCircle, Phone, Mail, FileText, Shield, RotateCcw, Wrench } from 'lucide-react';
-import { scrollToTop } from '../utils/scrollToTop';
+import { scrollToTop } from '../lib/scrollToTop';
 import './Support.css';
 
 const Support = () => {

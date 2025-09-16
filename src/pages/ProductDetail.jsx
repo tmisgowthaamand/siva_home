@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Star, ShoppingCart, Heart, Share2, Truck, Shield, RotateCcw, Headphones, Plus, Minus } from 'lucide-react';
-import { getProductById, products } from '../data/products';
+import { getProductById, products } from '../constants/products';
 import { useCart } from '../context/CartContext';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/ui/ProductCard';
 import './ProductDetail.css';
 
 const ProductDetail = () => {

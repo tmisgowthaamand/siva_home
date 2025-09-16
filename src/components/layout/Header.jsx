@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, User, Heart } from 'lucide-react';
-import { useCart } from '../context/CartContext';
-import { scrollToTop } from '../utils/scrollToTop';
+import { useCart } from '../../context/CartContext';
+import { scrollToTop } from '../../lib/scrollToTop';
 import './Header.css';
 
 const Header = () => {

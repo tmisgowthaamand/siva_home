@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Filter, Grid, List, SlidersHorizontal } from 'lucide-react';
-import { products, categories, brands } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import { products, categories, brands } from '../constants/products';
+import ProductCard from '../components/ui/ProductCard';
+import QuickViewModal from '../components/ui/QuickViewModal';
 import './Shop.css';
 
 const Shop = () => {

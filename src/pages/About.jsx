@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Award, Users, Clock, MapPin, ArrowLeft } from 'lucide-react';
-import { scrollToTop } from '../utils/scrollToTop';
+import { scrollToTop } from '../lib/scrollToTop';
 import './About.css';
 
 const About = () => {

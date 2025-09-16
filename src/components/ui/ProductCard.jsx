@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ShoppingCart, Star, Heart, Eye } from 'lucide-react';
-import { useCart } from '../context/CartContext';
-import { useFavorites } from '../context/FavoritesContext';
-import { highlightText } from '../utils/highlightText';
+import { useCart } from '../../context/CartContext';
+import { useFavorites } from '../../context/FavoritesContext';
+import { highlightText } from '../../utils/highlightText';
 import QuickViewModal from './QuickViewModal';
 import './ProductCard.css';
 

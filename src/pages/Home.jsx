@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, ShoppingCart, Zap, Shield, Truck, Headphones } from 'lucide-react';
-import { categories, getFeaturedProducts } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import { categories, getFeaturedProducts } from '../constants/products';
+import ProductCard from '../components/ui/ProductCard';
 import './Home.css';
 
 const Home = () => {

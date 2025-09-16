@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Send, ArrowLeft } from 'lucide-react';
-import { scrollToTop } from '../utils/scrollToTop';
+import { scrollToTop } from '../lib/scrollToTop';
 import './Contact.css';
 
 const Contact = () => {

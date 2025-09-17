@@ -1,13 +1,13 @@
 export const categories = [
-  { id: 'tv', name: 'Televisions', icon: '📺' },
-  { id: 'refrigerator', name: 'Refrigerators', icon: '❄️' },
-  { id: 'washing-machine', name: 'Washing Machines', icon: '🧺' },
-  { id: 'fan', name: 'Fans', icon: '🌀' },
-  { id: 'stove', name: 'Stoves', icon: '🔥' },
-  { id: 'iron-box', name: 'Iron Box', icon: '👔' },
-  { id: 'vacuum-cleaner', name: 'Vacuum Cleaners', icon: '🧹' },
-  { id: 'air-purifier', name: 'Air Purifiers', icon: '💨' },
-  { id: 'blender', name: 'Blenders', icon: '🥤' }
+  { id: 'tv', name: 'Televisions' },
+  { id: 'refrigerator', name: 'Refrigerators' },
+  { id: 'washing-machine', name: 'Washing Machines' },
+  { id: 'fan', name: 'Fans' },
+  { id: 'stove', name: 'Stoves' },
+  { id: 'iron-box', name: 'Iron Box' },
+  { id: 'vacuum-cleaner', name: 'Vacuum Cleaners' },
+  { id: 'air-purifier', name: 'Air Purifiers' },
+  { id: 'blender', name: 'Blenders' }
 ];
 
 export const brands = [

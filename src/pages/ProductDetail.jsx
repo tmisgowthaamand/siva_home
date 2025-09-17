@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Star, ShoppingCart, Heart, Share2, Truck, Shield, RotateCcw, Headphones, Plus, Minus } from 'lucide-react';
-import { getProductById, products } from '../constants/products';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Star, ShoppingCart, Heart, Share2, Truck, Shield, RotateCcw, Headphones, Plus, Minus, ArrowLeft } from 'lucide-react';
+import { getProductById, products, categories } from '../constants/products';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ui/ProductCard';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = getProductById(id);
   const { addToCart, isInCart, getCartItem } = useCart();
   const [selectedImage, setSelectedImage] = useState(0);
@@ -82,9 +83,19 @@ const ProductDetail = () => {
   const discount = calculateDiscount();
   const cartItem = getCartItem(product.id);
 
+  const handleBackToCategory = () => {
+    navigate(`/category/${product.category}`);
+  };
+
   return (
     <div className="product-detail">
       <div className="container">
+        <div className="back-to-category">
+          <button onClick={handleBackToCategory} className="back-button">
+            <ArrowLeft size={18} />
+            Back to {categories.find(cat => cat.id === product.category)?.name || 'Category'}
+          </button>
+        </div>
         {/* Breadcrumb */}
         <nav className="breadcrumb">
           <Link to="/">Home</Link>

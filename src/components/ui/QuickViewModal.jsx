@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Star, ShoppingCart, Eye } from 'lucide-react';
+import { X, Star, ShoppingCart, Eye, ArrowLeft } from 'lucide-react';
 import { useCart } from "../../context/CartContext";
 import { Link } from 'react-router-dom';
 import './QuickViewModal.css';
@@ -59,12 +59,23 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
     }
   };
 
+  const handleBack = (e) => {
+    e.stopPropagation();
+    window.history.back();
+  };
+
   return (
     <div className="quick-view-modal-overlay" onClick={handleBackdropClick}>
       <div className="quick-view-modal">
-        <button className="modal-close-btn" onClick={onClose}>
-          <X size={24} />
-        </button>
+        <div className="modal-header-buttons">
+          <button className="modal-back-btn" onClick={handleBack}>
+            <ArrowLeft size={20} />
+            Back
+          </button>
+          <button className="modal-close-btn" onClick={onClose}>
+            <X size={24} />
+          </button>
+        </div>
         
         <div className="modal-content">
           <div className="modal-image-section">

@@ -459,9 +459,21 @@ const Checkout = () => {
                   <button onClick={handlePrevStep} className="btn btn-outline">
                     Back to Payment
                   </button>
-                  <button onClick={handlePlaceOrder} className="btn btn-primary btn-lg">
-                    Place Order
-                  </button>
+                  <div className="checkout-action-buttons">
+                    <button 
+                      type="button" 
+                      onClick={() => navigate('/')} 
+                      className="btn btn-outline btn-lg"
+                    >
+                      Cancel Order
+                    </button>
+                    <button 
+                      onClick={handlePlaceOrder} 
+                      className="btn btn-primary btn-lg"
+                    >
+                      Place Order
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

@@ -23,10 +23,37 @@
   box-shadow: var(--shadow-2xl);
 }
 
-.modal-close-btn {
+.modal-header-buttons {
   position: absolute;
   top: var(--spacing-md);
+  left: var(--spacing-md);
   right: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.modal-back-btn {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.modal-back-btn:hover {
+  background: var(--bg-light);
+  border-color: var(--text-secondary);
+  color: var(--primary);
+}
+
+.modal-close-btn {
   background: var(--white);
   border: 2px solid var(--border);
   border-radius: 50%;
@@ -36,7 +63,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
   transition: all 0.2s ease;
 }
 
@@ -50,6 +76,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-2xl);
   padding: var(--spacing-2xl);
+  margin-top: var(--spacing-lg);
 }
 
 /* Modal Image Section */

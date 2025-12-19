@@ -27,7 +27,7 @@ const About = () => {
         {/* About Hero */}
         <div className="about-hero">
           <h1>About Siva Electronics & Home Appliances</h1>
-          <p>Your trusted partner for premium electronics and home appliances since 2019</p>
+          <p>Your trusted partner for premium electronics and home appliances since 2017</p>
           <div className="website-info">
             <p>Visit us online at <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer" className="website-link">sivaappliances.shop</a></p>
           </div>
@@ -38,7 +38,7 @@ const About = () => {
           <div className="story-content">
             <h2>Our Story</h2>
             <p>
-              Founded in 2019, Siva Electronics & Home Appliances has been serving customers with
+              Founded in 2017, Siva Electronics & Home Appliances has been serving customers with
               high-quality electronics and home appliances for several years. What started as a small
               family business has grown into one of the most trusted electronics retailers in the region.
             </p>
@@ -108,7 +108,7 @@ const About = () => {
             <div className="stat-label">Brands</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">6+</div>
+            <div className="stat-number">8+</div>
             <div className="stat-label">Years Experience</div>
           </div>
         </div>
@@ -145,7 +145,7 @@ const About = () => {
           <h2>Our Expertise</h2>
           <div className="expertise-content">
             <p>
-              With over 6 years of experience in the electronics and home appliances industry,
+              With over 8 years of experience in the electronics and home appliances industry,
               we have developed deep expertise across multiple product categories:
             </p>
             <div className="expertise-list">

@@ -186,6 +186,20 @@ textarea.form-input {
   border-color: var(--secondary);
 }
 
+.payment-method.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--bg-light);
+}
+
+.payment-method.disabled:hover {
+  border-color: var(--border);
+}
+
+.payment-method.disabled input {
+  cursor: not-allowed;
+}
+
 .payment-method input[type="radio"] {
   margin-right: var(--spacing-md);
 }

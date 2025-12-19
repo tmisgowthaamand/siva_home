@@ -20,7 +20,7 @@ const Checkout = () => {
     pincode: '',
 
     // Payment Information
-    paymentMethod: 'card',
+    paymentMethod: 'cod',
     cardNumber: '',
     expiryDate: '',
     cvv: '',
@@ -357,34 +357,6 @@ const Checkout = () => {
                     <input
                       type="radio"
                       name="paymentMethod"
-                      value="card"
-                      checked={formData.paymentMethod === 'card'}
-                      onChange={handleInputChange}
-                    />
-                    <div className="payment-option">
-                      <CreditCard size={20} />
-                      <span>Credit/Debit Card</span>
-                    </div>
-                  </label>
-
-                  <label className="payment-method">
-                    <input
-                      type="radio"
-                      name="paymentMethod"
-                      value="upi"
-                      checked={formData.paymentMethod === 'upi'}
-                      onChange={handleInputChange}
-                    />
-                    <div className="payment-option">
-                      <span>📱</span>
-                      <span>UPI Payment</span>
-                    </div>
-                  </label>
-
-                  <label className="payment-method">
-                    <input
-                      type="radio"
-                      name="paymentMethod"
                       value="cod"
                       checked={formData.paymentMethod === 'cod'}
                       onChange={handleInputChange}
@@ -396,23 +368,7 @@ const Checkout = () => {
                   </label>
                 </div>
 
-                {formData.paymentMethod === 'card' && (
-                  <div className="payment-info">
-                    <div className="payment-message">
-                      <h4>💳 Credit/Debit Card Payment</h4>
-                      <p>Your payment will be processed securely. Click "Proceed to Pay" to complete your order.</p>
-                    </div>
-                  </div>
-                )}
 
-                {formData.paymentMethod === 'upi' && (
-                  <div className="payment-info">
-                    <div className="payment-message">
-                      <h4>📱 UPI Payment</h4>
-                      <p>You will be redirected to your UPI app to complete the payment. Click "Proceed to Pay" to continue.</p>
-                    </div>
-                  </div>
-                )}
 
                 {formData.paymentMethod === 'cod' && (
                   <div className="cod-info">
@@ -454,12 +410,7 @@ const Checkout = () => {
                   <div className="review-section">
                     <h3>Payment Method</h3>
                     <div className="payment-display">
-                      {formData.paymentMethod === 'card' && (
-                        <p>Credit/Debit Card ending in {formData.cardNumber.slice(-4)}</p>
-                      )}
-                      {formData.paymentMethod === 'upi' && (
-                        <p>UPI Payment ({formData.upiId})</p>
-                      )}
+
                       {formData.paymentMethod === 'cod' && (
                         <p>Cash on Delivery</p>
                       )}

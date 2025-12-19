@@ -27,7 +27,7 @@ const About = () => {
         {/* About Hero */}
         <div className="about-hero">
           <h1>About Siva Electronics & Home Appliances</h1>
-          <p>Your trusted partner for premium electronics and home appliances since 2010</p>
+          <p>Your trusted partner for premium electronics and home appliances since 2019</p>
           <div className="website-info">
             <p>Visit us online at <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer" className="website-link">sivaappliances.shop</a></p>
           </div>
@@ -38,25 +38,25 @@ const About = () => {
           <div className="story-content">
             <h2>Our Story</h2>
             <p>
-              Founded in 2010, Siva Electronics & Home Appliances has been serving customers with 
-              high-quality electronics and home appliances for over a decade. What started as a small 
+              Founded in 2019, Siva Electronics & Home Appliances has been serving customers with
+              high-quality electronics and home appliances for several years. What started as a small
               family business has grown into one of the most trusted electronics retailers in the region.
             </p>
             <p>
-              We believe in providing our customers with the latest technology at competitive prices, 
-              backed by exceptional customer service and comprehensive warranty support. Our commitment 
-              to quality and customer satisfaction has made us the preferred choice for thousands of 
+              We believe in providing our customers with the latest technology at competitive prices,
+              backed by exceptional customer service and comprehensive warranty support. Our commitment
+              to quality and customer satisfaction has made us the preferred choice for thousands of
               happy customers.
             </p>
             <p>
-              Over the years, we have built strong partnerships with leading brands like LG, Samsung, 
-              Whirlpool, Bosch, Panasonic, Sony, and many more. Our extensive product range covers 
-              everything from smart televisions and energy-efficient refrigerators to advanced washing 
+              Over the years, we have built strong partnerships with leading brands like LG, Samsung,
+              Whirlpool, Bosch, Panasonic, Sony, and many more. Our extensive product range covers
+              everything from smart televisions and energy-efficient refrigerators to advanced washing
               machines and modern kitchen appliances.
             </p>
             <p>
-              Our team of experienced professionals is dedicated to helping customers find the perfect 
-              appliances for their homes. We provide expert guidance, professional installation services, 
+              Our team of experienced professionals is dedicated to helping customers find the perfect
+              appliances for their homes. We provide expert guidance, professional installation services,
               and comprehensive after-sales support to ensure complete customer satisfaction.
             </p>
           </div>
@@ -108,7 +108,7 @@ const About = () => {
             <div className="stat-label">Brands</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">14+</div>
+            <div className="stat-number">6+</div>
             <div className="stat-label">Years Experience</div>
           </div>
         </div>
@@ -145,7 +145,7 @@ const About = () => {
           <h2>Our Expertise</h2>
           <div className="expertise-content">
             <p>
-              With over 14 years of experience in the electronics and home appliances industry, 
+              With over 6 years of experience in the electronics and home appliances industry,
               we have developed deep expertise across multiple product categories:
             </p>
             <div className="expertise-list">
@@ -182,18 +182,18 @@ const About = () => {
           <div className="mission">
             <h3>Our Mission</h3>
             <p>
-              To provide our customers with the best electronics and home appliances at competitive 
-              prices, backed by exceptional service and support that exceeds expectations. We strive 
-              to make modern technology accessible to every household while maintaining the highest 
+              To provide our customers with the best electronics and home appliances at competitive
+              prices, backed by exceptional service and support that exceeds expectations. We strive
+              to make modern technology accessible to every household while maintaining the highest
               standards of quality and customer satisfaction.
             </p>
           </div>
           <div className="vision">
             <h3>Our Vision</h3>
             <p>
-              To be the leading electronics retailer in the region, known for quality products, 
-              innovative solutions, and outstanding customer relationships. We envision a future 
-              where every home is equipped with the latest technology that enhances comfort, 
+              To be the leading electronics retailer in the region, known for quality products,
+              innovative solutions, and outstanding customer relationships. We envision a future
+              where every home is equipped with the latest technology that enhances comfort,
               convenience, and quality of life.
             </p>
           </div>
@@ -204,8 +204,8 @@ const About = () => {
           <h2>Our Promise to You</h2>
           <div className="promise-content">
             <p>
-              At Siva Electronics & Home Appliances, we don't just sell products – we build lasting 
-              relationships with our customers. Our commitment goes beyond the point of sale. 
+              At Siva Electronics & Home Appliances, we don't just sell products – we build lasting
+              relationships with our customers. Our commitment goes beyond the point of sale.
               Browse our complete collection online at <a href="http://sivaappliances.shop/" target="_blank" rel="noopener noreferrer" className="website-link">sivaappliances.shop</a>:
             </p>
             <ul className="promise-list">

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { useNotification } from './NotificationContext';
 
 const CartContext = createContext();
 
@@ -60,6 +61,7 @@ const initialState = {
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const { showNotification } = useNotification();
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -79,6 +81,7 @@ export const CartProvider = ({ children }) => {
       type: 'ADD_TO_CART',
       payload: { ...product, quantity }
     });
+    showNotification(`${product.name} added successfully to cart`);
   };
 
   const removeFromCart = (productId) => {

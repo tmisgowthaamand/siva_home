@@ -2,14 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 9999;
   padding: var(--spacing-lg);
+  backdrop-filter: blur(4px);
 }
 
 .quick-view-modal {
@@ -40,7 +41,7 @@
   padding: 8px 16px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--spacing-sm);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -235,6 +236,7 @@
   transition: all 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 0.025em;
+  white-space: nowrap;
 }
 
 .modal-add-to-cart-btn:hover:not(:disabled) {
@@ -280,25 +282,25 @@
   .quick-view-modal-overlay {
     padding: var(--spacing-md);
   }
-  
+
   .modal-content {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     padding: var(--spacing-xl);
   }
-  
+
   .modal-image-container {
     height: 300px;
   }
-  
+
   .modal-product-name {
     font-size: var(--font-size-xl);
   }
-  
+
   .modal-product-pricing .current-price {
     font-size: var(--font-size-xl);
   }
-  
+
   .modal-actions {
     flex-direction: column;
   }
@@ -309,15 +311,15 @@
     margin: var(--spacing-sm);
     max-height: 95vh;
   }
-  
+
   .modal-content {
     padding: var(--spacing-lg);
   }
-  
+
   .modal-image-container {
     height: 250px;
   }
-  
+
   .modal-close-btn {
     width: 35px;
     height: 35px;

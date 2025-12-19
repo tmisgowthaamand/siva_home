@@ -17,8 +17,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="footer-description">
-              Your trusted partner for premium electronics and home appliances. 
-              Quality products, competitive prices, and exceptional service since 2010.
+              Your trusted partner for premium electronics and home appliances.
+              Quality products, competitive prices, and exceptional service since 2019.
             </p>
             <div className="social-links">
               <a href="#" className="social-link" aria-label="Facebook">
@@ -90,8 +90,8 @@ const Footer = () => {
               Subscribe to get updates on new products and exclusive offers.
             </p>
             <form className="newsletter-form">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Enter your email"
                 className="newsletter-input"
               />

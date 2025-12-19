@@ -18,14 +18,14 @@ const Checkout = () => {
     city: '',
     state: '',
     pincode: '',
-    
+
     // Payment Information
     paymentMethod: 'card',
     cardNumber: '',
     expiryDate: '',
     cvv: '',
     cardName: '',
-    
+
     // UPI
     upiId: ''
   });
@@ -46,7 +46,7 @@ const Checkout = () => {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
@@ -58,7 +58,7 @@ const Checkout = () => {
 
   const validateStep = (step) => {
     const newErrors = {};
-    
+
     if (step === 1) {
       // Validate shipping information
       if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
@@ -69,31 +69,31 @@ const Checkout = () => {
       if (!formData.city.trim()) newErrors.city = 'City is required';
       if (!formData.state.trim()) newErrors.state = 'State is required';
       if (!formData.pincode.trim()) newErrors.pincode = 'Pincode is required';
-      
+
       // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (formData.email && !emailRegex.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address';
       }
-      
+
       // Phone validation
       const phoneRegex = /^[6-9]\d{9}$/;
       if (formData.phone && !phoneRegex.test(formData.phone)) {
         newErrors.phone = 'Please enter a valid 10-digit phone number';
       }
-      
+
       // Pincode validation
       const pincodeRegex = /^\d{6}$/;
       if (formData.pincode && !pincodeRegex.test(formData.pincode)) {
         newErrors.pincode = 'Please enter a valid 6-digit pincode';
       }
     }
-    
+
     if (step === 2) {
       // Simplified payment validation - no card details required
       // Payment method selection is enough
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -118,10 +118,10 @@ const Checkout = () => {
     if (validateStep(2)) {
       // Generate unique order ID
       const orderId = generateOrderId();
-      
+
       // Calculate final total with COD charges if applicable
       const finalTotal = total + (formData.paymentMethod === 'cod' ? 50 : 0);
-      
+
       // Simulate order processing
       const orderData = {
         orderId,
@@ -142,13 +142,13 @@ const Checkout = () => {
         orderDate: new Date().toISOString(),
         estimatedDelivery: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
       };
-      
+
       // Store order in localStorage
       localStorage.setItem('lastOrder', JSON.stringify(orderData));
-      
+
       // Clear cart
       clearCart();
-      
+
       // Navigate to order confirmation
       navigate('/order-confirmation');
     }
@@ -194,7 +194,7 @@ const Checkout = () => {
                   <Truck size={24} />
                   <h2>Shipping Information</h2>
                 </div>
-                
+
                 <div className="form-grid">
                   <div className="form-group">
                     <label className="form-label">
@@ -211,9 +211,12 @@ const Checkout = () => {
                     />
                     {errors.firstName && <span className="error-message">{errors.firstName}</span>}
                   </div>
-                  
+
                   <div className="form-group">
-                    <label className="form-label">Last Name *</label>
+                    <label className="form-label">
+                      <User size={16} />
+                      Last Name *
+                    </label>
                     <input
                       type="text"
                       name="lastName"
@@ -224,7 +227,7 @@ const Checkout = () => {
                     />
                     {errors.lastName && <span className="error-message">{errors.lastName}</span>}
                   </div>
-                  
+
                   <div className="form-group">
                     <label className="form-label">
                       <Mail size={16} />
@@ -240,7 +243,7 @@ const Checkout = () => {
                     />
                     {errors.email && <span className="error-message">{errors.email}</span>}
                   </div>
-                  
+
                   <div className="form-group">
                     <label className="form-label">
                       <Phone size={16} />
@@ -256,7 +259,7 @@ const Checkout = () => {
                     />
                     {errors.phone && <span className="error-message">{errors.phone}</span>}
                   </div>
-                  
+
                   <div className="form-group full-width">
                     <label className="form-label">
                       <MapPin size={16} />
@@ -272,9 +275,12 @@ const Checkout = () => {
                     />
                     {errors.address && <span className="error-message">{errors.address}</span>}
                   </div>
-                  
+
                   <div className="form-group">
-                    <label className="form-label">City *</label>
+                    <label className="form-label">
+                      <MapPin size={16} />
+                      City *
+                    </label>
                     <input
                       type="text"
                       name="city"
@@ -285,9 +291,12 @@ const Checkout = () => {
                     />
                     {errors.city && <span className="error-message">{errors.city}</span>}
                   </div>
-                  
+
                   <div className="form-group">
-                    <label className="form-label">State *</label>
+                    <label className="form-label">
+                      <MapPin size={16} />
+                      State *
+                    </label>
                     <select
                       name="state"
                       value={formData.state}
@@ -308,9 +317,12 @@ const Checkout = () => {
                     </select>
                     {errors.state && <span className="error-message">{errors.state}</span>}
                   </div>
-                  
+
                   <div className="form-group">
-                    <label className="form-label">Pincode *</label>
+                    <label className="form-label">
+                      <MapPin size={16} />
+                      Pincode *
+                    </label>
                     <input
                       type="text"
                       name="pincode"
@@ -323,7 +335,7 @@ const Checkout = () => {
                     {errors.pincode && <span className="error-message">{errors.pincode}</span>}
                   </div>
                 </div>
-                
+
                 <div className="form-actions">
                   <button onClick={handleNextStep} className="btn btn-primary btn-lg">
                     Continue to Payment
@@ -339,7 +351,7 @@ const Checkout = () => {
                   <CreditCard size={24} />
                   <h2>Payment Information</h2>
                 </div>
-                
+
                 <div className="payment-methods">
                   <label className="payment-method">
                     <input
@@ -354,7 +366,7 @@ const Checkout = () => {
                       <span>Credit/Debit Card</span>
                     </div>
                   </label>
-                  
+
                   <label className="payment-method">
                     <input
                       type="radio"
@@ -368,7 +380,7 @@ const Checkout = () => {
                       <span>UPI Payment</span>
                     </div>
                   </label>
-                  
+
                   <label className="payment-method">
                     <input
                       type="radio"
@@ -408,7 +420,7 @@ const Checkout = () => {
                     <p><strong>Note:</strong> Additional charges of ₹50 may apply for Cash on Delivery.</p>
                   </div>
                 )}
-                
+
                 <div className="form-actions">
                   <button onClick={handlePrevStep} className="btn btn-outline">
                     Back to Shipping
@@ -426,7 +438,7 @@ const Checkout = () => {
                 <div className="section-header">
                   <h2>Review Your Order</h2>
                 </div>
-                
+
                 <div className="order-review">
                   <div className="review-section">
                     <h3>Shipping Address</h3>
@@ -438,7 +450,7 @@ const Checkout = () => {
                       <p>Email: {formData.email}</p>
                     </div>
                   </div>
-                  
+
                   <div className="review-section">
                     <h3>Payment Method</h3>
                     <div className="payment-display">
@@ -454,21 +466,21 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="form-actions">
                   <button onClick={handlePrevStep} className="btn btn-outline">
                     Back to Payment
                   </button>
                   <div className="checkout-action-buttons">
-                    <button 
-                      type="button" 
-                      onClick={() => navigate('/')} 
+                    <button
+                      type="button"
+                      onClick={() => navigate('/')}
                       className="btn btn-outline btn-lg"
                     >
                       Cancel Order
                     </button>
-                    <button 
-                      onClick={handlePlaceOrder} 
+                    <button
+                      onClick={handlePlaceOrder}
                       className="btn btn-primary btn-lg"
                     >
                       Place Order
@@ -483,7 +495,7 @@ const Checkout = () => {
           <div className="order-summary">
             <div className="summary-card">
               <h3>Order Summary</h3>
-              
+
               <div className="order-items">
                 {items.map((item) => (
                   <div key={item.id} className="summary-item">
@@ -498,13 +510,13 @@ const Checkout = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="summary-calculations">
                 <div className="summary-row">
                   <span>Subtotal ({items.length} items)</span>
                   <span>{formatPrice(subtotal)}</span>
                 </div>
-                
+
                 <div className="summary-row">
                   <span>Shipping</span>
                   <span>
@@ -515,21 +527,21 @@ const Checkout = () => {
                     )}
                   </span>
                 </div>
-                
+
                 <div className="summary-row">
                   <span>Tax (GST 18%)</span>
                   <span>{formatPrice(tax)}</span>
                 </div>
-                
+
                 {formData.paymentMethod === 'cod' && (
                   <div className="summary-row">
                     <span>COD Charges</span>
                     <span>₹50</span>
                   </div>
                 )}
-                
+
                 <div className="summary-divider"></div>
-                
+
                 <div className="summary-row total-row">
                   <span>Total</span>
                   <span>{formatPrice(total + (formData.paymentMethod === 'cod' ? 50 : 0))}</span>

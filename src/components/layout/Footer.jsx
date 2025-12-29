@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -20,20 +20,7 @@ const Footer = () => {
               Your trusted partner for premium electronics and home appliances.
               Quality products, competitive prices, and exceptional service since 2017.
             </p>
-            <div className="social-links">
-              <a href="#" className="social-link" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="social-link" aria-label="Twitter">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="social-link" aria-label="YouTube">
-                <Youtube size={20} />
-              </a>
-            </div>
+
           </div>
 
           {/* Quick Links */}

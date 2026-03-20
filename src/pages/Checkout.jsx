@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreditCard, Truck, MapPin, Phone, Mail, User, Lock } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import QRPayment from './QRPayment';
 import './Checkout.css';
 
 const Checkout = () => {
   const { items, getCartTotal, clearCart } = useCart();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
+  const [showQRPayment, setShowQRPayment] = useState(false);
+  const [qrOrderData, setQrOrderData] = useState(null);
   const [formData, setFormData] = useState({
     // Shipping Information
     firstName: '',
@@ -20,7 +23,7 @@ const Checkout = () => {
     pincode: '',
 
     // Payment Information
-    paymentMethod: 'cod',
+    paymentMethod: 'qr',
     cardNumber: '',
     expiryDate: '',
     cvv: '',
@@ -100,6 +103,19 @@ const Checkout = () => {
 
   const handleNextStep = () => {
     if (validateStep(currentStep)) {
+      // If QR payment is selected on step 2, show QR payment component
+      if (currentStep === 2 && formData.paymentMethod === 'qr') {
+        const orderId = generateOrderId();
+        const finalTotal = total;
+        setQrOrderData({
+          orderId,
+          amount: finalTotal.toString(),
+          email: formData.email,
+          phone: formData.phone
+        });
+        setShowQRPayment(true);
+        return;
+      }
       setCurrentStep(currentStep + 1);
     }
   };
@@ -157,6 +173,54 @@ const Checkout = () => {
   if (items.length === 0) {
     navigate('/cart');
     return null;
+  }
+
+  // Show QR Payment component if QR payment is selected
+  if (showQRPayment && qrOrderData) {
+    return (
+      <QRPayment
+        orderId={qrOrderData.orderId}
+        amount={qrOrderData.amount}
+        description="Siva Electronics Order"
+        onBack={() => {
+          setShowQRPayment(false);
+          setCurrentStep(2);
+        }}
+        onPaymentComplete={(result) => {
+          if (result.status === 'success') {
+            // Create order data with QR payment confirmation
+            const orderData = {
+              orderId: qrOrderData.orderId,
+              items,
+              total: qrOrderData.amount,
+              shippingInfo: {
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                phone: formData.phone,
+                address: formData.address,
+                city: formData.city,
+                state: formData.state,
+                pincode: formData.pincode
+              },
+              paymentMethod: 'qr',
+              paymentStatus: 'confirmed',
+              orderDate: new Date().toISOString(),
+              estimatedDelivery: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
+            };
+
+            // Store order in localStorage
+            localStorage.setItem('lastOrder', JSON.stringify(orderData));
+
+            // Clear cart
+            clearCart();
+
+            // Navigate to order confirmation
+            navigate('/order-confirmation');
+          }
+        }}
+      />
+    );
   }
 
   const subtotal = getCartTotal();
@@ -357,6 +421,20 @@ const Checkout = () => {
                     <input
                       type="radio"
                       name="paymentMethod"
+                      value="qr"
+                      checked={formData.paymentMethod === 'qr'}
+                      onChange={handleInputChange}
+                    />
+                    <div className="payment-option">
+                      <span>📱</span>
+                      <span>QR Code Payment (UPI)</span>
+                    </div>
+                  </label>
+
+                  <label className="payment-method">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
                       value="cod"
                       checked={formData.paymentMethod === 'cod'}
                       onChange={handleInputChange}
@@ -368,7 +446,12 @@ const Checkout = () => {
                   </label>
                 </div>
 
-
+                {formData.paymentMethod === 'qr' && (
+                  <div className="payment-info-box">
+                    <p>📱 <strong>Quick & Safe UPI Payment</strong></p>
+                    <p>Scan the QR code with any UPI app (Paytm, Google Pay, PhonePe)</p>
+                  </div>
+                )}
 
                 {formData.paymentMethod === 'cod' && (
                   <div className="cod-info">
@@ -410,9 +493,11 @@ const Checkout = () => {
                   <div className="review-section">
                     <h3>Payment Method</h3>
                     <div className="payment-display">
-
+                      {formData.paymentMethod === 'qr' && (
+                        <p>📱 QR Code Payment (UPI)</p>
+                      )}
                       {formData.paymentMethod === 'cod' && (
-                        <p>Cash on Delivery</p>
+                        <p>💰 Cash on Delivery</p>
                       )}
                     </div>
                   </div>

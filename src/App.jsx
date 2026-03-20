@@ -23,6 +23,7 @@ import ShippingPolicy from './pages/ShippingPolicy';
 import CancellationRefund from './pages/CancellationRefund';
 import Category from './pages/Category';
 import Favorites from './pages/Favorites';
+import QRPayment from './pages/QRPayment';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
                   <Route path="/terms-conditions" element={<TermsConditions />} />
                   <Route path="/shipping" element={<ShippingPolicy />} />
                   <Route path="/cancellation" element={<CancellationRefund />} />
+                  <Route path="/checkout/qr-payment" element={<QRPayment />} />
                 </Routes>
               </main>
               <Footer />

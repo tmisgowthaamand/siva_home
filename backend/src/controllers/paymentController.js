@@ -72,7 +72,7 @@ export async function initiatePayment(req, res) {
   }
 }
 
-// Generate QR code for UPI payment
+// Generate QR code for UPI payment - PAYTM COMPATIBLE
 export async function generateQRCode(req, res) {
   try {
     const { orderId, amount, description } = req.body;
@@ -83,22 +83,50 @@ export async function generateQRCode(req, res) {
       });
     }
 
-    // Create UPI string for QR
-    // UPI format: upi://pay?pa=<UPI ID>&pn=<Name>&am=<Amount>&tn=<Description>&tr=<Transaction ID>
-    const upiString = `upi://pay?pa=sivaelectronics@paytm&pn=SivaElectronics&am=${amount}&tn=${description || 'Order Payment'}&tr=${orderId}`;
+    // Paytm UPI format - Using Paytm UPI ID
+    const upiId = 'sivaelectronics@paytm';
+    const merchantName = 'SIVA ELECTRONICS';
+    const transactionRef = orderId;
+    const upiDescription = description || 'Payment for order';
 
-    const qrCode = await QRCode.toDataURL(upiString);
+    // Standard UPI format for Paytm
+    const upiString = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(merchantName)}&am=${amount}&tn=${encodeURIComponent(upiDescription)}&tr=${transactionRef}`;
+
+    console.log('Generating UPI QR for:', {
+      upiId,
+      merchantName,
+      amount,
+      orderId
+    });
+
+    // Generate QR code from UPI string
+    const qrCode = await QRCode.toDataURL(upiString, {
+      errorCorrectionLevel: 'H',
+      type: 'image/png',
+      width: 300,
+      color: {
+        dark: '#000000',
+        light: '#FFFFFF'
+      }
+    });
 
     res.json({
       success: true,
       qrCode,
       upiString,
+      upiId,
       amount,
-      orderId
+      orderId,
+      merchantName,
+      message: 'QR code generated successfully'
     });
   } catch (error) {
     console.error('QR generation error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate QR code',
+      details: error.message
+    });
   }
 }
 
@@ -145,3 +173,4 @@ export async function verifyPayment(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
+

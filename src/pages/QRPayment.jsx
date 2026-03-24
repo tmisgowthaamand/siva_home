@@ -198,30 +198,34 @@ const QRPayment = ({ orderId, amount, description, onBack, onPaymentComplete }) 
         {/* More Options */}
         <div className="more-options-section">
           <h4>More Payment Options</h4>
-          <div className="more-options-payment-grid">
+          <div className="more-options-list">
             {/* UPI Option */}
-            <button className="payment-option-card">
-              <div className="option-icon">📱</div>
-              <div className="option-content">
-                <h3>UPI</h3>
-                <div className="option-logos">
-                  <span className="logo-badge">Paytm</span>
-                  <span className="logo-badge">Google Pay</span>
-                  <span className="logo-badge">PhonePe</span>
-                  <span className="logo-badge more">& more</span>
+            <button className="payment-option-simple">
+              <div className="option-left">
+                <span className="option-simple-icon">📱</span>
+                <div className="option-text">
+                  <h3>UPI</h3>
+                  <div className="service-logos">
+                    <span>Paytm</span>
+                    <span>Google Pay</span>
+                    <span>PhonePe</span>
+                    <span className="more">& more</span>
+                  </div>
                 </div>
               </div>
-              <div className="option-arrow">›</div>
+              <span className="chevron">›</span>
             </button>
 
             {/* Net Banking Option */}
-            <button className="payment-option-card">
-              <div className="option-icon">🏦</div>
-              <div className="option-content">
-                <h3>Net Banking</h3>
-                <p className="option-subtitle">All major banks supported</p>
+            <button className="payment-option-simple">
+              <div className="option-left">
+                <span className="option-simple-icon">🏦</span>
+                <div className="option-text">
+                  <h3>Net Banking</h3>
+                  <p className="bank-subtitle">All major banks supported</p>
+                </div>
               </div>
-              <div className="option-arrow">›</div>
+              <span className="chevron">›</span>
             </button>
           </div>
         </div>

@@ -770,122 +770,99 @@ textarea.form-input {
 }
 
 .more-options-section h4 {
-  margin: 0 0 var(--spacing-md) 0;
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-  font-weight: 600;
+  margin: 0 0 var(--spacing-lg) 0;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-.more-options-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-sm);
-}
-
-.more-option-btn {
-  padding: var(--spacing-sm) var(--spacing-md);
-  background: transparent;
+.more-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   border: 1px solid var(--border);
   border-radius: 6px;
-  cursor: pointer;
-  color: var(--text-primary);
-  font-weight: 500;
-  font-size: var(--font-size-sm);
-  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.more-option-btn:hover {
-  background: var(--bg-secondary);
-  border-color: var(--primary);
-}
-
-/* New Payment Option Cards */
-.more-options-payment-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-sm);
-}
-
-.payment-option-card {
+.payment-option-simple {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md) var(--spacing-lg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border: none;
+  border-bottom: 1px solid var(--border);
   background: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
   text-align: left;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.payment-option-card:hover {
-  border-color: var(--secondary);
-  background: var(--bg-secondary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.payment-option-simple:last-child {
+  border-bottom: none;
 }
 
-.option-icon {
-  font-size: 32px;
-  width: 50px;
-  height: 50px;
+.payment-option-simple:hover {
+  background: #f9f9f9;
+}
+
+.option-left {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-light);
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.option-content {
+  align-items: flex-start;
+  gap: var(--spacing-md);
   flex: 1;
 }
 
-.option-content h3 {
-  margin: 0 0 4px 0;
+.option-simple-icon {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+}
+
+.option-text {
+  flex: 1;
+}
+
+.option-text h3 {
+  margin: 0 0 6px 0;
   font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--text-primary);
 }
 
-.option-logos {
+.service-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 8px;
+  align-items: center;
 }
 
-.logo-badge {
-  display: inline-block;
-  padding: 2px 6px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  font-size: 11px;
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-.logo-badge.more {
+.service-logos span {
+  font-size: 13px;
   color: var(--text-secondary);
-  border-style: dashed;
+  font-weight: 400;
 }
 
-.option-subtitle {
-  margin: 4px 0 0 0;
-  font-size: var(--font-size-xs);
+.service-logos span.more {
   color: var(--text-secondary);
 }
 
-.option-arrow {
-  font-size: 24px;
+.bank-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.chevron {
+  font-size: 20px;
   color: var(--text-secondary);
   flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.payment-option-card:hover .option-arrow {
-  color: var(--secondary);
-  transform: translateX(4px);
 }
 
 /* Security Badge */

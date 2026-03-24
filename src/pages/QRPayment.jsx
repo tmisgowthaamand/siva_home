@@ -21,7 +21,7 @@ const QRPayment = ({ orderId, amount, description, onBack, onPaymentComplete }) 
       setLoading(true);
       setError(null);
 
-      const apiUrl = import.meta.env.VITE_API_URL?.trim() || '';
+      const apiUrl = process.env.REACT_APP_API_URL?.trim() || 'http://localhost:10000';
       const endpoint = `${apiUrl}/api/payment/qr`;
 
       console.log('🔍 QRPayment Debug Info:');
@@ -198,10 +198,35 @@ const QRPayment = ({ orderId, amount, description, onBack, onPaymentComplete }) 
         {/* More Options */}
         <div className="more-options-section">
           <h4>More Payment Options</h4>
-          <div className="more-options-grid">
-            <button className="more-option-btn" disabled>💳 Credit/Debit Card</button>
-            <button className="more-option-btn" disabled>🏦 Net Banking</button>
-            <button className="more-option-btn" disabled>📱 Wallet</button>
+          <div className="more-options-list">
+            {/* UPI Option */}
+            <button className="payment-option-simple">
+              <div className="option-left">
+                <span className="option-simple-icon">📱</span>
+                <div className="option-text">
+                  <h3>UPI</h3>
+                  <div className="service-logos">
+                    <span>Paytm</span>
+                    <span>Google Pay</span>
+                    <span>PhonePe</span>
+                    <span className="more">& more</span>
+                  </div>
+                </div>
+              </div>
+              <span className="chevron">›</span>
+            </button>
+
+            {/* Net Banking Option */}
+            <button className="payment-option-simple">
+              <div className="option-left">
+                <span className="option-simple-icon">🏦</span>
+                <div className="option-text">
+                  <h3>Net Banking</h3>
+                  <p className="bank-subtitle">All major banks supported</p>
+                </div>
+              </div>
+              <span className="chevron">›</span>
+            </button>
           </div>
         </div>
 

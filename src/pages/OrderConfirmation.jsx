@@ -140,7 +140,6 @@ const OrderConfirmation = () => {
             <div className="info-section">
               <h3>Payment Method</h3>
               <div className="payment-info">
-                {orderData.paymentMethod === 'online' && <p>Online Payment (Paytm)</p>}
                 {orderData.paymentMethod === 'card' && <p>Credit/Debit Card</p>}
                 {orderData.paymentMethod === 'upi' && <p>UPI Payment</p>}
                 {orderData.paymentMethod === 'cod' && <p>Cash on Delivery</p>}

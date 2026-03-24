@@ -1259,30 +1259,6 @@ export const products = [
       'Warranty': '2 Years'
     }
   },
-  // Test Product with Price 1
-  {
-    id: 100,
-    name: 'Test Product - Price 1',
-    brand: 'TEST',
-    category: 'blender',
-    price: 1,
-    originalPrice: 1,
-    image: 'https://placehold.co/300x300?text=Test+Product',
-    images: ['https://placehold.co/300x300?text=Test+Product'],
-    description: 'This is a test product for payment testing with Paytm gateway. Price is 1 rupee for testing purposes only.',
-    features: ['Test Feature 1', 'Test Feature 2'],
-    rating: 5.0,
-    reviews: 1,
-    inStock: true,
-    shipping: 0,
-    tax: 0,
-    specifications: {
-      'Price': '₹1',
-      'Shipping': '₹0',
-      'Tax': '₹0',
-      'Purpose': 'Payment Gateway Testing'
-    }
-  }
 ];
 
 export const getProductsByCategory = (categoryId) => {
@@ -1299,7 +1275,7 @@ export const getFeaturedProducts = () => {
 
 export const searchProducts = (query) => {
   const lowercaseQuery = query.toLowerCase();
-  return products.filter(product =>
+  return products.filter(product => 
     product.name.toLowerCase().includes(lowercaseQuery) ||
     product.brand.toLowerCase().includes(lowercaseQuery) ||
     product.category.toLowerCase().includes(lowercaseQuery)

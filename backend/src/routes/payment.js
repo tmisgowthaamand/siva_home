@@ -1,19 +1,25 @@
 import express from 'express';
-import { initiatePayment, verifyPayment, generateQRCode, paymentCallback } from '../controllers/paymentController.js';
+import { initiatePayment, verifyPayment, generateQRCode } from '../controllers/paymentController.js';
 
 const router = express.Router();
 
-// Initiate Paytm Payment
+// Generate QR code for payment
 router.post('/initiate', initiatePayment);
 
 // Verify payment status
 router.post('/verify', verifyPayment);
 
-// Generate QR code for payment
+// Get QR code
 router.post('/qr', generateQRCode);
 
-// Paytm callback - handles both POST and GET
-router.post('/callback', paymentCallback);
-router.get('/callback', paymentCallback);
+// Paytm callback
+router.post('/callback', async (req, res) => {
+  try {
+    const response = await verifyPayment(req.body);
+    res.json(response);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
 
 export default router;
